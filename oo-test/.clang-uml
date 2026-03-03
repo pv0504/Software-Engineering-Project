@@ -1,0 +1,41 @@
+# .clang-uml - tuned for oo-test
+compilation_database_dir: build
+output_directory: docs/diagrams
+generate_method_arguments: none
+
+generate_packages: true
+package_type: namespace
+
+diagrams:
+  all_classes:
+    type: class
+    glob:
+      - "src/*.cpp"
+      - "examples/*.cpp"
+    include:
+      namespaces:
+        - "ootest::core"
+        - "ootest::render"
+        - "ootest::resource"
+        - "ootest::system"
+        - "ootest::event"
+    generate_packages: true
+
+  packages:
+    type: package
+    glob:
+      - "src/*.cpp"
+      - "examples/*.cpp"
+    generate_packages: true
+
+  all_includes:
+    type: include
+    glob:
+      - "src/*.cpp"
+      - "examples/*.cpp"
+
+  focused_example:
+    type: class
+    generate_packages: true
+    include:
+      elements: []
