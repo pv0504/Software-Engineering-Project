@@ -1,5 +1,125 @@
 # Getting Started With
 
+##
+
+---
+
+# UML Diagram Generation Pipeline
+
+This project automatically generates UML class diagrams from a C++ CMake repository using:
+- `cmake`
+- `clang-uml`
+- `plantuml`
+- `graphviz`
+- optional Python analysis (`boosted_community_rep.py`)
+  
+---
+
+## 1. System Requirements
+
+Make sure the following tools are installed:
+
+```bash
+cmake --version
+clang-uml --version
+plantuml -version
+python3 --version
+```
+
+If any are missing, install:
+
+```bash
+sudo apt update
+sudo apt install git build-essential cmake gcc g++ make \
+python3 python3-pip default-jre graphviz plantuml clang-uml
+```
+
+---
+
+## 2. Repository Structure Requirement
+
+The target repository must:
+- Be a C++ project
+- Contain a `CMakeLists.txt` file at its root
+  
+Example:
+
+```gcode
+my_cpp_project/  
+ ├── CMakeLists.txt  
+ ├── src/  
+ └── include/
+```
+
+Below is a clean, structured **README.md** section you can paste into your repository.
+It explains usage clearly and looks professional.
+
+---
+
+## 3. Running the Pipeline
+
+From this repository root:
+
+```bash
+make run REPO=<path-to-cpp-repo>
+```
+
+Example:
+
+```bash
+make run REPO=../my_cpp_project
+```
+
+---
+
+## 4. What the Command Does
+
+When you run:
+```bash
+make run REPO=...
+```
+It performs:
+1. Validates repository path
+2. Runs CMake to generate compile database
+3. Generates UML diagrams using `clang-uml`
+4. Converts `.puml` → `.svg` using `plantuml`
+5. Optionally runs `boosted_community_rep.py` if present
+6. Copies final diagrams into:
+  
+```bash
+output/<repository-name>/
+```
+---
+
+## 5. Output Location
+Generated diagrams will be available at:
+
+```bash
+output/<repo-name>/
+```
+---
+
+## 6. Cleaning Generated Files
+To remove generated artifacts:
+
+```bash
+make clean
+```
+This removes:
+
+- `build/`
+- `output/`
+  
+
+---
+
+## Minimal Usage Summary
+
+```bash
+make run REPO=<repo-path>
+make clean
+```
+
 make setup<br>
 make run REPO=./oo-test (in general make run REPO=\<path-to-repo-root\>)<br>
 <br>
