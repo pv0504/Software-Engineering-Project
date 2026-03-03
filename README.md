@@ -1,8 +1,5 @@
 # Getting Started With
 
-##
-
----
 
 # UML Diagram Generation Pipeline
 
@@ -13,7 +10,6 @@ This project automatically generates UML class diagrams from a C++ CMake reposit
 - `graphviz`
 - optional Python analysis (`boosted_community_rep.py`)
   
----
 
 ## 1. System Requirements
 
@@ -33,9 +29,6 @@ sudo apt update
 sudo apt install git build-essential cmake gcc g++ make \
 python3 python3-pip default-jre graphviz plantuml clang-uml
 ```
-
----
-
 ## 2. Repository Structure Requirement
 
 The target repository must:
@@ -43,34 +36,26 @@ The target repository must:
 - Contain a `CMakeLists.txt` file at its root
   
 Example:
-
 ```gcode
 my_cpp_project/  
  ├── CMakeLists.txt  
  ├── src/  
  └── include/
 ```
-
 Below is a clean, structured **README.md** section you can paste into your repository.
 It explains usage clearly and looks professional.
-
----
 
 ## 3. Running the Pipeline
 
 From this repository root:
-
 ```bash
 make run REPO=<path-to-cpp-repo>
 ```
-
 Example:
 
 ```bash
 make run REPO=../my_cpp_project
 ```
-
----
 
 ## 4. What the Command Does
 
@@ -89,7 +74,6 @@ It performs:
 ```bash
 output/<repository-name>/
 ```
----
 
 ## 5. Output Location
 Generated diagrams will be available at:
